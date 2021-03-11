@@ -1,0 +1,36 @@
+ctrl+shift+J= inspect html page
+
+--Comments--
+
+// -one line comment
+/* multiline comment */
+
+
+--Data Types--
+
+7 tipuri diferite de date: undefined, null, boolean, string, symbol, number, and object
+
+object= stocarea o unei multimi de perechi de valori cheie  diferite
+
+
+--Declarare-- 
+
+1)VAR
+
+var= pentru declararea de variabile, daca de exemplu :
+
+var myName="Georgiana"
+
+ulterior pot schimba myName=8 pentru ca este de tip var
+
+->poate fi folosit pe tot parcursul programului
+
+2)LET
+--> poate fi folosit doar in scopul unde declarati
+
+
+3)const
+
+-->variabila care nu ar trebui sa se schimbe niciodata
+
+--Stocare--
