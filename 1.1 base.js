@@ -10,7 +10,8 @@ console.log("hello world");
 
 //Data Types//
 //7 tipuri diferite de date:undefined, null, boolean, string, symbol, number, and object
-
+/* boolean= este un tip de date din JS  care are doua valori adevarat si fals, sunt practic mici comutatoare
+on-off unde adevarat-on si fals-off
 
 //DECLARARE//
 
@@ -41,7 +42,7 @@ var b=2; //"="este operatorul de atribuire aici si declaram si atribuim intr-o s
 
 console.log(a);//aici avem null
 
-a=7; //nu am mai declarat pentru ca deja a fost declarat mai sus 
+a=7; //nu am mai declarat pentru ca deja a fost declarat mai sus
 
 b=a;
 
