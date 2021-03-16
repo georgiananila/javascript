@@ -192,3 +192,127 @@ console.log(checkObject("hello"));//not found
 
 
 //======================================Manipularea OBIECTELOR COMPLEXE======================================
+
+/* Un obiect JS este un mod de a stoca date flexibil, astfel incat sa puteti stoca siruri,numere, tablouri,
+si chiar si alte obiecte*/
+
+var myMusic = [//matrice numita myMusic si in interiorul matricei sunt obiectele
+    {
+
+        "artist": "Billy Joel",
+        "title": "Piano Man",
+        "release_year": 1973,
+        "formats": [
+            "CD",
+            "8T",
+            "LP"
+        ],
+        "gold": true
+    },
+    {
+        "artist": "Beau Carnes",
+        "title": "Cereal Man",
+        "release_year": 2003,
+        "formats": [
+            "Youtube video"
+        ]
+    }
+
+];
+
+//=====================================Accesarea Obiectelor imbricate========================
+
+/* avem un obiect cu alte obiecte imbricate in interior*/
+
+var myStorage = {
+    "car": {
+        "inside": {
+            "glove box": "maps",
+            "passenger seat": "crumbs"
+        },
+        "outside": {
+            "trunk": "jack"
+        }
+    }
+};
+
+var gloveBoxContent = myStorage.car.inside["glove box"];//myStorage.car.inside["glove box"]
+
+console.log(gloveBoxContent);
+
+
+//====================================Accesarea matricelor(array) imbricate========================
+
+var myPlants = [
+    {
+        type: "flowers",
+        list: [
+            "rose",
+            "tulip",
+            "dandelion"
+        ]
+    },
+    {
+        type: "trees",
+        list: [
+            "fir",
+            "pine",
+            "birch"
+        ]
+    }
+];
+
+var secondTree = myPlants[1].list[1]//al doilea copac pine
+
+
+//=============================Colectie de inregistrari================================
+
+var collection = {
+
+    "2548": {
+        "album": "Slippery When Wet",
+        "artist": "Bon Jovi",
+        "tracks": [
+            "Let It Rock",
+            "You Give Love a Bad Name"
+        ]
+    },
+    "2468": {
+        "album": "1999",
+        "artist": "Prince",
+        "tracks": [
+            "1999",
+            "Little Red Corvette"
+        ]
+
+    },
+    "1245": {
+        "artist": "Robert Palmer",
+        "tracks": []
+    },
+    "5439": {
+        "album": "ABBA Gold"
+    }
+};
+
+//Keep a copy of the collection for test
+
+var colectionCopy = JSON.parse(JSON.stringify(collection));//modalitate de copiere a obiectului
+
+function updateRecords(id, prop, value) {
+
+    if (value === "") {//prima conditie pe care o vom testa este daca trebuie sa stergem proprietatea
+        delete collection[id][prop];
+
+    } else if (prop === "tracks") {
+        collection[id][prop] = collection[id][prop] || [];// deci daca exista deja vom stabili sa fie egala cu ea insasi, dar daca nu exista o vom seta cu empty array
+        collection[id][prop].push(value);
+    } else {
+        collection[id][prop] = value;
+    }
+
+    return collection;
+}
+
+console.log(updateRecords(5439, "artist", "ABBA"));//la ultimul s-a adaugat o noua proprietate artist:"ABBA"
+console.log(updateRecords(2468, "tracks", "test"));
