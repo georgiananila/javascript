@@ -28,3 +28,18 @@ console.log(randomWholeNumber());
 //GENERATE RANDOM WHOLE NUMBERS WITHIN A RANGE
 
 //->puteti genera  de asemenea nr intregi intr-un interval 
+
+function ourRandomRange(ourMin, ourMax) {
+    return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;//calcului unui nr random intre min si max
+}
+
+ourRandomRange(1, 9);
+
+function randomRange(myMin, myMax) {
+    return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+}
+
+var myRandom = randomRange(5, 15);
+console.log(myRandom);
+
+
